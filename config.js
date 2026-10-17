@@ -1,6 +1,8 @@
 // Optional cloud sync. Leave both empty to run fully offline/local.
 // Fill these in after creating a free Supabase project (see README.md, step "Sync across devices").
 export default {
-  SUPABASE_URL: 'https://egdwtwhcdxqpzbdvwtse.supabase.co'
-  SUPABASE_ANON_KEY: 'sb_publishable_SBNlCtRd0hoDknKotv_TSw_7haJtr8Y'
+  export default {
+  SUPABASE_URL: '',
+  SUPABASE_ANON_KEY: ''
+};
 };
