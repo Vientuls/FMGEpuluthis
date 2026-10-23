@@ -4,7 +4,7 @@ import { loadProfile, UL, me, signedInThisSession } from './store.js';
 import { loadMeta } from './data.js';
 import { go } from './router.js';
 import { syncNow } from './sync.js';
-import './views/home.js'; import './views/test.js'; import './views/result.js'; import './views/add.js'; import './views/who.js'; import './views/settings.js';
+import './views/home.js'; import './views/test.js'; import './views/result.js'; import './views/add.js'; import './views/who.js'; import './views/settings.js'; import './views/cards.js';
 
 loadUI(); applyUI(); bindEvents();
 if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => { }));

@@ -43,6 +43,9 @@ function chk() {
 }
 function gain(g) { const a = lv(PR.xp); PR.xp += g; if (lv(PR.xp) > a) { toast('⬆️ Level ' + lv(PR.xp) + '!'); boom(80) } }
 
+// flashcards: keep the daily streak alive and pay XP for a finished session
+export function cardXP(x) { touch(); gain(x); savePR() }
+
 // called when an answer is picked in practice/survival mode
 export function fx(R, id, k) {
   if (R.mode != 'practice') return; const d = byId(id), c = k == d.a; touch();

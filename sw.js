@@ -1,8 +1,8 @@
 // Offline cache. Bump VERSION when you change the app so phones pick up the new files.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = ['./', 'index.html', 'config.js', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png',
   'js/main.js', 'js/ui.js', 'js/router.js', 'js/themes.js', 'js/store.js', 'js/data.js', 'js/game.js', 'js/sync.js', 'js/state.js',
-  'js/views/home.js', 'js/views/test.js', 'js/views/result.js', 'js/views/add.js', 'js/views/who.js', 'js/views/settings.js', 'data/meta.json'];
+  'js/views/home.js', 'js/views/test.js', 'js/views/result.js', 'js/views/add.js', 'js/views/who.js', 'js/views/settings.js', 'js/views/cards.js', 'js/srs.js', 'data/meta.json'];
 const CORE = 'core-' + VERSION, BULK = 'bulk-v1';          // BULK (questions + images) survives app updates
 self.addEventListener('install', e => { e.waitUntil(caches.open(CORE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())) });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('core-') && k != CORE).map(k => caches.delete(k)))).then(() => self.clients.claim())) });

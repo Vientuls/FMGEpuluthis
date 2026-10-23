@@ -1,6 +1,7 @@
 // Cloud sync via Supabase REST (no SDK). Data lives in one table: user_data(user_id, profile, key, value, updated_at)
 import cfg from '../config.js';
 import { LS, LW, S, PR, me, hooks, loadProfile } from './store.js';
+import { mergeFc } from './srs.js';
 
 export const enabled = () => !!(cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY);
 const K = 'fmge_auth';
@@ -22,6 +23,7 @@ export function mergeProf(a, b) {
   o.f = { ...(b.f || {}), ...(a.f || {}) };
   o.bm = { ...(b.bm || {}), ...(a.bm || {}) };
   o.qs = { ...(b.qs || {}), ...(a.qs || {}) };
+  if (a.fc || b.fc) o.fc = mergeFc(a.fc, b.fc);          // flashcard schedule: newest review wins per card
   return o;
 }
 

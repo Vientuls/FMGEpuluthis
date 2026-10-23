@@ -41,13 +41,24 @@ How it behaves
 - If you study on two devices at once, numbers like XP take the larger value, history and badges are merged. Your own added questions use "newest save wins".
 - The anon key is meant to be public; row-level security makes each account see only its own rows.
 
-## 3. Changing things
+## 3. Flashcards
+
+Every question in the bank (including the ones you add) works as a flashcard: question on the front, answer + explanation on the back.
+
+- **Home > New module > Cards** builds a session from the subjects, sets and filter you picked (e.g. only *Incorrect* questions). "Cards per session" sets the size (default 20).
+- **Home > Progress > 🗂 Flashcards** reviews everything that is due today, across all sets.
+- Tap **Show answer**, then rate **Again / Good / Easy**. Again brings the card back in a few cards and tomorrow's schedule restarts; Good and Easy push it 1 / 3 / 7 / 14 / 30 days out. The small label on each button shows when you will see it next.
+- Keys: Space flips (and rates Good once flipped), 1 / 2 / 3 rate, O shows the options on the front, B bookmarks, Z undoes.
+- Card progress is stored with your profile, so it syncs and backs up like everything else. Reviews also keep your daily streak and give a little XP.
+
+## 4. Changing things
 
 | I want to… | Edit |
 |---|---|
 | Add/rename a theme or change colours | `js/themes.js` (one line per theme) |
 | Change layout/looks | `css/app.css` |
 | Change test behaviour | `js/views/test.js` |
+| Change flashcards / review schedule | `js/views/cards.js`, `js/srs.js` (`GAP` = days per box) |
 | Change scoring/XP/badges | `js/game.js` |
 | Add questions | in the app (*Add questions*), or put a new JSON file in `data/sets/` and add it to `data/meta.json` |
 
@@ -56,7 +67,7 @@ After changing app files, open `sw.js` and bump `VERSION` (e.g. `v2`) so phones 
 ## Files
 ```
 index.html  config.js  manifest.webmanifest  sw.js
-css/app.css          js/ (main, ui, router, themes, store, data, game, sync, views/*)
+css/app.css          js/ (main, ui, router, themes, store, data, game, sync, srs, views/*)
 data/meta.json       data/sets/NN.json  (questions, one file per set)
 img/q/*.webp         img/hero/*.webp    icons/*
 supabase/schema.sql  tools/build_data.py (how the data was converted from the old single HTML)
