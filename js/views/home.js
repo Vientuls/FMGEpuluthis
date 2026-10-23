@@ -59,7 +59,7 @@ function html() {
     <label class="tog"><input type="checkbox" ${H.shuf ? 'checked' : ''} data-i="shuf" data-on="change"><i></i><span>Shuffle questions within each subject</span></label>
     <button id="startbtn" class="btn pri big" data-a="start" ${pool.length ? '' : 'disabled'}>${cd ? 'Start flashcards' : 'Create module'}${pool.length ? (cd ? ' · ' + cap + ' cards' : ' · ' + n + ' Qs') : ''}</button>
     ${S.last ? `<div class="g2"><button class="btn" data-a="adq">＋ Add questions</button><button class="btn" data-a="rvl">Review last</button></div>` : `<button class="btn big" data-a="adq">＋ Add questions</button>`}`, { cls: 'w-create' });
-  return `${topbar()}<div class="home-grid">${resume}${profile()}${create}${history()}</div>`;
+  return `${topbar('<button class="chip-btn" data-a="dueCards" title="Flashcards">🗂 <span>Cards</span></button>')}<div class="home-grid">${resume}${profile()}${create}${history()}</div>`;
 }
 
 // ---- inputs ----

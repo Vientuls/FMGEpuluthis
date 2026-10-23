@@ -1,5 +1,5 @@
 // Offline cache. Bump VERSION when you change the app so phones pick up the new files.
-const VERSION = 'v3';
+const VERSION = 'v4';
 const SHELL = ['./', 'index.html', 'config.js', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png',
   'js/main.js', 'js/ui.js', 'js/router.js', 'js/themes.js', 'js/store.js', 'js/data.js', 'js/game.js', 'js/sync.js', 'js/state.js',
   'js/views/home.js', 'js/views/test.js', 'js/views/result.js', 'js/views/add.js', 'js/views/who.js', 'js/views/settings.js', 'js/views/cards.js', 'js/srs.js', 'data/meta.json'];
