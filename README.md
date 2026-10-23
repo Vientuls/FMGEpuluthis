@@ -51,7 +51,11 @@ Every question in the bank (including the ones you add) works as a flashcard: qu
 - Keys: Space flips (and rates Good once flipped), 1 / 2 / 3 rate, O shows the options on the front, B bookmarks, Z undoes.
 - Card progress is stored with your profile, so it syncs and backs up like everything else. Reviews also keep your daily streak and give a little XP.
 
-## 4. Changing things
+## 4. Question sets and the teacher's notes
+
+The annotated sets (Anatomy, Biochemistry, Microbiology, PSM, ENT, OBG, Paediatrics, Ophthalmology ...) keep the teacher's handwritten pages as images: they show under the explanation after you answer and on the back of a flashcard. Answer fixes are listed in `CORRECTIONS.md`.
+
+## 5. Changing things
 
 | I want to… | Edit |
 |---|---|
